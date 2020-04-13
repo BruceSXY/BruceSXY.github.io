@@ -20,28 +20,34 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="开一栏，简单写写机器学习的内容，也顺便当记笔记了。如有不正确的地方，欢迎批评指正。Let’s get start. 1.简介机器学习，是什么呢？用我自己的理解，就是一个模型，它能够吃进一大坨数据对（x,y)，经过消化，找到x和y的内在联系，并生成一个模型。利用这个模型，你再给它新的x，他就能找到对应的y。简单来说，就是因果归纳机。 地位人工智能 | 机器学习 | 深度学习 传统编程与机器学习 举例">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习（1）简介及概念">
+<meta property="og:url" content="http://yoursite.com/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="开一栏，简单写写机器学习的内容，也顺便当记笔记了。如有不正确的地方，欢迎批评指正。Let’s get start. 1.简介机器学习，是什么呢？用我自己的理解，就是一个模型，它能够吃进一大坨数据对（x,y)，经过消化，找到x和y的内在联系，并生成一个模型。利用这个模型，你再给它新的x，他就能找到对应的y。简单来说，就是因果归纳机。 地位人工智能 | 机器学习 | 深度学习 传统编程与机器学习 举例">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/resources/D1970DE0B676A93DF6B46F8B2CCFCCB8.png">
+<meta property="article:published_time" content="2020-04-13T17:39:31.824Z">
+<meta property="article:modified_time" content="2020-04-13T17:39:31.824Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/resources/D1970DE0B676A93DF6B46F8B2CCFCCB8.png">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>机器学习（1）简介及概念 | Hexo</title>
   
 
 
@@ -139,9 +145,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -157,10 +164,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/" class="post-title-link" itemprop="url">机器学习（1）简介及概念</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          机器学习（1）简介及概念
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -183,7 +189,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>开一栏，简单写写机器学习的内容，也顺便当记笔记了。如有不正确的地方，欢迎批评指正。Let’s get start.</p>
+        <p>开一栏，简单写写机器学习的内容，也顺便当记笔记了。如有不正确的地方，欢迎批评指正。Let’s get start.</p>
 <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>机器学习，是什么呢？用我自己的理解，就是一个模型，它能够吃进一大坨数据对（x,y)，经过消化，找到x和y的内在联系，并生成一个模型。利用这个模型，你再给它新的x，他就能找到对应的y。简单来说，就是因果归纳机。</p>
 <h4 id="地位"><a href="#地位" class="headerlink" title="地位"></a>地位</h4><p>人工智能<br> |<br> 机器学习<br> |<br> 深度学习</p>
 <h4 id="传统编程与机器学习"><a href="#传统编程与机器学习" class="headerlink" title="传统编程与机器学习"></a>传统编程与机器学习</h4><p><img src="resources/D1970DE0B676A93DF6B46F8B2CCFCCB8.png" alt=""><br> 举例来说，传统编程是已知x和方程 y = 2x + 1（方程既程序），求y的值。但对于机器学习，我知道一堆x和y的值对，要求一个x和y的对应关系。注意我这里说的是对应关系，并不是方程。机器学习不是科学家，给出你具体公式，它更像一位老师傅，靠经验得结果。</p>
@@ -193,80 +199,30 @@
 <h4 id="机器学习的分类"><a href="#机器学习的分类" class="headerlink" title="机器学习的分类"></a>机器学习的分类</h4><p>我们主要研究监督式机器学习,流程如下：<br> 监督式机器学习，又分回归和分类两种任务：<br> 1）回归 ：回归模型用于预测连续值<br> 2）分类 ：分类模型用于预测离散值</p>
 <p>%E5%BC%80%E4%B8%80%E6%A0%8F%EF%BC%8C%E7%AE%80%E5%8D%95%E5%86%99%E5%86%99%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%8C%E4%B9%9F%E9%A1%BA%E4%BE%BF%E5%BD%93%E8%AE%B0%E7%AC%94%E8%AE%B0%E4%BA%86%E3%80%82%E5%A6%82%E6%9C%89%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%9C%B0%E6%96%B9%EF%BC%8C%E6%AC%A2%E8%BF%8E%E6%89%B9%E8%AF%84%E6%8C%87%E6%AD%A3%E3%80%82Let’s%20get%20start.%0A%23%23%201.%E7%AE%80%E4%BB%8B%20%20%0A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%8C%E6%98%AF%E4%BB%80%E4%B9%88%E5%91%A2%EF%BC%9F%E7%94%A8%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%8C%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A8%A1%E5%9E%8B%EF%BC%8C%E5%AE%83%E8%83%BD%E5%A4%9F%E5%90%83%E8%BF%9B%E4%B8%80%E5%A4%A7%E5%9D%A8%E6%95%B0%E6%8D%AE%E5%AF%B9%EF%BC%88x%2Cy)%EF%BC%8C%E7%BB%8F%E8%BF%87%E6%B6%88%E5%8C%96%EF%BC%8C%E6%89%BE%E5%88%B0x%E5%92%8Cy%E7%9A%84%E5%86%85%E5%9C%A8%E8%81%94%E7%B3%BB%EF%BC%8C%E5%B9%B6%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E6%A8%A1%E5%9E%8B%E3%80%82%E5%88%A9%E7%94%A8%E8%BF%99%E4%B8%AA%E6%A8%A1%E5%9E%8B%EF%BC%8C%E4%BD%A0%E5%86%8D%E7%BB%99%E5%AE%83%E6%96%B0%E7%9A%84x%EF%BC%8C%E4%BB%96%E5%B0%B1%E8%83%BD%E6%89%BE%E5%88%B0%E5%AF%B9%E5%BA%94%E7%9A%84y%E3%80%82%E7%AE%80%E5%8D%95%E6%9D%A5%E8%AF%B4%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%9B%A0%E6%9E%9C%E5%BD%92%E7%BA%B3%E6%9C%BA%E3%80%82%0A%23%23%23%23%20%E5%9C%B0%E4%BD%8D%0A%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%0A%20%7C%0A%20%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%0A%20%7C%0A%20%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%23%23%23%23%20%E4%BC%A0%E7%BB%9F%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%20%0A%20%20!%5Bd1970de0b676a93df6b46f8b2ccfccb8.png%5D(evernotecid%3A%2F%2FF6C1EC56-49F4-469A-A51F-F6AFA054F8DB%2Fappyinxiangcom%2F29059221%2FENResource%2Fp2)%40w%3D300%0A%20%20%E4%B8%BE%E4%BE%8B%E6%9D%A5%E8%AF%B4%EF%BC%8C%E4%BC%A0%E7%BB%9F%E7%BC%96%E7%A8%8B%E6%98%AF%E5%B7%B2%E7%9F%A5x%E5%92%8C%E6%96%B9%E7%A8%8B%20y%20%3D%202x%20%2B%201%EF%BC%88%E6%96%B9%E7%A8%8B%E6%97%A2%E7%A8%8B%E5%BA%8F%EF%BC%89%EF%BC%8C%E6%B1%82y%E7%9A%84%E5%80%BC%E3%80%82%E4%BD%86%E5%AF%B9%E4%BA%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%8C%E6%88%91%E7%9F%A5%E9%81%93%E4%B8%80%E5%A0%86x%E5%92%8Cy%E7%9A%84%E5%80%BC%E5%AF%B9%EF%BC%8C%E8%A6%81%E6%B1%82%E4%B8%80%E4%B8%AAx%E5%92%8Cy%E7%9A%84%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB%E3%80%82%E6%B3%A8%E6%84%8F%E6%88%91%E8%BF%99%E9%87%8C%E8%AF%B4%E7%9A%84%E6%98%AF%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB%EF%BC%8C%E5%B9%B6%E4%B8%8D%E6%98%AF%E6%96%B9%E7%A8%8B%E3%80%82%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%8D%E6%98%AF%E7%A7%91%E5%AD%A6%E5%AE%B6%EF%BC%8C%E7%BB%99%E5%87%BA%E4%BD%A0%E5%85%B7%E4%BD%93%E5%85%AC%E5%BC%8F%EF%BC%8C%E5%AE%83%E6%9B%B4%E5%83%8F%E4%B8%80%E4%BD%8D%E8%80%81%E5%B8%88%E5%82%85%EF%BC%8C%E9%9D%A0%E7%BB%8F%E9%AA%8C%E5%BE%97%E7%BB%93%E6%9E%9C%E3%80%82%0A%20%20%0A%20%20%0A%0A—%0A%23%23%202.%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%0A%23%23%23%23%20%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%0A%201%EF%BC%89%E7%89%B9%E5%BE%81%EF%BC%9A%E4%BD%BF%E6%88%91%E4%BB%AC%E8%A1%A8%E7%A4%BA%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%98%AF%E8%BE%93%E5%85%A5%E5%8F%98%E9%87%8Fx%0A%202%EF%BC%89%E6%A0%87%E7%AD%BE%EF%BC%9A%E6%A0%87%E7%AD%BE%E6%98%AF%E6%8C%87%E6%88%91%E4%BB%AC%E8%A6%81%E9%A2%84%E6%B5%8B%E7%9A%84%E7%9C%9F%E5%AE%9E%E4%BA%8B%E7%89%A9y%0A%203%EF%BC%89%E6%A0%B7%E6%9C%AC%EF%BC%9A%E6%9C%89%E6%A0%87%E7%AD%BE%E7%9A%84%E6%A0%B7%E6%9C%AC%7B%E7%89%B9%E5%BE%81%EF%BC%8C%E6%A0%87%E7%AD%BE%7D%EF%BC%8C%E7%94%A8%E4%BA%8E%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E6%97%A0%E6%A0%87%E7%AD%BE%E7%9A%84%E6%A0%B7%E6%9C%AC%7B%E7%89%B9%E5%BE%81%EF%BC%8C%EF%BC%9F%7D%EF%BC%8C%E7%94%A8%E4%BA%8E%E5%AF%B9%E6%96%B0%E6%95%B0%E6%8D%AE%E4%BD%9C%E5%87%BA%E9%A2%84%E6%B5%8B%0A%204%EF%BC%89%E6%A8%A1%E5%9E%8B%EF%BC%9A%E5%AE%9A%E4%B9%89%E4%BA%86%E7%89%B9%E5%BE%81%E4%B8%8E%E6%A0%87%E7%AD%BE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%8C%E6%98%AF%E6%89%A7%E8%A1%8C%E9%A2%84%E6%B5%8B%E7%9A%84%E5%B7%A5%E5%85%B7%20(x%20%E2%80%94%3E%20model%20%E2%80%94%3E%20y)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%E6%A8%A1%E5%9E%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%87%8D%E8%A6%81%E9%98%B6%E6%AE%B5%EF%BC%9A%E8%AE%AD%E7%BB%83%E5%92%8C%E6%8E%A8%E6%96%AD%0A%20%20%E8%AE%AD%E7%BB%83%E6%98%AF%E5%90%91%E6%A8%A1%E5%9E%8B%E8%BE%93%E5%85%A5%E6%9C%89%E6%A0%87%E7%AD%BE%E7%9A%84%E6%A0%B7%E6%9C%AC%EF%BC%8C%E8%AE%A9%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E7%89%B9%E5%BE%81%E4%B8%8E%E6%A0%87%E7%AD%BE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%0A%20%20%E6%8E%A8%E6%96%AD%E6%98%AF%E5%B0%86%E8%AE%AD%E7%BB%83%E5%90%8E%E7%9A%84%E6%A8%A1%E5%9E%8B%E7%94%A8%E4%BA%8E%E6%97%A0%E6%A0%87%E7%AD%BE%E6%A0%B7%E6%9C%AC%EF%BC%8C%E4%BD%9C%E5%87%BA%E9%A2%84%E6%B5%8B%0A%23%23%23%23%20%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%88%86%E7%B1%BB%0A%20%20!%5B02bb5ccb375a7549d4b631f219264630.png%5D(evernotecid%3A%2F%2FF6C1EC56-49F4-469A-A51F-F6AFA054F8DB%2Fappyinxiangcom%2F29059221%2FENResource%2Fp3)%40w%3D300%0A%20%20%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%E6%88%91%E4%BB%AC%E4%B8%BB%E8%A6%81%E7%A0%94%E7%A9%B6%E7%9B%91%E7%9D%A3%E5%BC%8F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%2C%E6%B5%81%E7%A8%8B%E5%A6%82%E4%B8%8B%EF%BC%9A%20%0A%20!%5B5e724e7f5157e54b71ab21c25d0ddd5f.png%5D(evernotecid%3A%2F%2FF6C1EC56-49F4-469A-A51F-F6AFA054F8DB%2Fappyinxiangcom%2F29059221%2FENResource%2Fp4)%40w%3D300%0A%20%0A%20%E7%9B%91%E7%9D%A3%E5%BC%8F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%8C%E5%8F%88%E5%88%86%E5%9B%9E%E5%BD%92%E5%92%8C%E5%88%86%E7%B1%BB%E4%B8%A4%E7%A7%8D%E4%BB%BB%E5%8A%A1%EF%BC%9A%0A%201%EF%BC%89%E5%9B%9E%E5%BD%92%20%EF%BC%9A%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E7%94%A8%E4%BA%8E%E9%A2%84%E6%B5%8B%E8%BF%9E%E7%BB%AD%E5%80%BC%0A%202%EF%BC%89%E5%88%86%E7%B1%BB%20%EF%BC%9A%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E7%94%A8%E4%BA%8E%E9%A2%84%E6%B5%8B%E7%A6%BB%E6%95%A3%E5%80%BC%0A%0A%0A</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/%E5%BC%80%E7%AF%87/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/13/%E5%BC%80%E7%AF%87/" class="post-title-link" itemprop="url">开篇</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-04-13 16:47:45 / 修改时间：16:49:21" itemprop="dateCreated datePublished" datetime="2020-04-13T16:47:45+02:00">2020-04-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>我想用这个博客<br>分享我的知识和故事</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/13/%E5%BC%80%E7%AF%87/" rel="prev" title="开篇">
+      <i class="fa fa-chevron-left"></i> 开篇
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -319,6 +275,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简介"><span class="nav-number">1.</span> <span class="nav-text">1.简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#地位"><span class="nav-number">1.0.1.</span> <span class="nav-text">地位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传统编程与机器学习"><span class="nav-number">1.0.2.</span> <span class="nav-text">传统编程与机器学习</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-基本概念"><span class="nav-number">2.</span> <span class="nav-text">2.基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-number">2.0.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#机器学习的分类"><span class="nav-number">2.0.2.</span> <span class="nav-text">机器学习的分类</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
