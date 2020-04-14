@@ -20,23 +20,23 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="开一栏，简单写写机器学习的内容，也顺便当记笔记了。如有不正确的地方，欢迎批评指正。Let’s get start. 1.简介机器学习，是什么呢？用我自己的理解，就是一个模型，它能够吃进一大坨数据对（x,y)，经过消化，找到x和y的内在联系，并生成一个模型。利用这个模型，你再给它新的x，他就能找到对应的y。简单来说，就是因果归纳机。 地位人工智能 | 机器学习 | 深度学习 传统编程与机器学习 举例">
+  <meta name="description" content="好的模型处于损失最低时，那么我们就要力求损失函数最小，降低损失。如果我们能够确定损失函数要往参数空间的哪个方向前进就再好不过了。 沿着这个方向， 我们可以知道所选择的每组新的超参数 都比之前一组参数的损失小一些。 要获得具体方向， 一种方法是计算梯度， 即与模型参数相关的损失函数的导数我们在能够尽可能降低损失的方向上反复采取小步。 我们将这些小步称为梯度步长 （但它们实际上是负梯度步长） 这种优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习（1）简介及概念">
-<meta property="og:url" content="http://yoursite.com/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/index.html">
+<meta property="og:title" content="机器学习（3）降低损失">
+<meta property="og:url" content="http://yoursite.com/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%883%EF%BC%89%E9%99%8D%E4%BD%8E%E6%8D%9F%E5%A4%B1/index.html">
 <meta property="og:site_name" content="Bruce S 的停机坪">
-<meta property="og:description" content="开一栏，简单写写机器学习的内容，也顺便当记笔记了。如有不正确的地方，欢迎批评指正。Let’s get start. 1.简介机器学习，是什么呢？用我自己的理解，就是一个模型，它能够吃进一大坨数据对（x,y)，经过消化，找到x和y的内在联系，并生成一个模型。利用这个模型，你再给它新的x，他就能找到对应的y。简单来说，就是因果归纳机。 地位人工智能 | 机器学习 | 深度学习 传统编程与机器学习 举例">
+<meta property="og:description" content="好的模型处于损失最低时，那么我们就要力求损失函数最小，降低损失。如果我们能够确定损失函数要往参数空间的哪个方向前进就再好不过了。 沿着这个方向， 我们可以知道所选择的每组新的超参数 都比之前一组参数的损失小一些。 要获得具体方向， 一种方法是计算梯度， 即与模型参数相关的损失函数的导数我们在能够尽可能降低损失的方向上反复采取小步。 我们将这些小步称为梯度步长 （但它们实际上是负梯度步长） 这种优化">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/images/img1.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/images/img2.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/images/img3.png">
-<meta property="article:published_time" content="2020-04-13T17:39:31.824Z">
-<meta property="article:modified_time" content="2020-04-14T08:32:23.400Z">
+<meta property="og:image" content="http://yoursite.com/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%883%EF%BC%89%E9%99%8D%E4%BD%8E%E6%8D%9F%E5%A4%B1/images/img4.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%883%EF%BC%89%E9%99%8D%E4%BD%8E%E6%8D%9F%E5%A4%B1/images/img5.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%883%EF%BC%89%E9%99%8D%E4%BD%8E%E6%8D%9F%E5%A4%B1/images/img6.png">
+<meta property="article:published_time" content="2020-04-14T08:15:50.000Z">
+<meta property="article:modified_time" content="2020-04-14T08:30:09.546Z">
 <meta property="article:author" content="Song，Xiangyu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/images/img1.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%883%EF%BC%89%E9%99%8D%E4%BD%8E%E6%8D%9F%E5%A4%B1/images/img4.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/">
+<link rel="canonical" href="http://yoursite.com/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%883%EF%BC%89%E9%99%8D%E4%BD%8E%E6%8D%9F%E5%A4%B1/">
 
 
 <script id="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>机器学习（1）简介及概念 | Bruce S 的停机坪</title>
+  <title>机器学习（3）降低损失 | Bruce S 的停机坪</title>
   
 
 
@@ -154,7 +154,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%883%EF%BC%89%E9%99%8D%E4%BD%8E%E6%8D%9F%E5%A4%B1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -167,7 +167,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          机器学习（1）简介及概念
+          机器学习（3）降低损失
         </h1>
 
         <div class="post-meta">
@@ -176,16 +176,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-04-13 19:39:31" itemprop="dateCreated datePublished" datetime="2020-04-13T19:39:31+02:00">2020-04-13</time>
+              <time title="创建时间：2020-04-14 10:15:50 / 修改时间：10:30:09" itemprop="dateCreated datePublished" datetime="2020-04-14T10:15:50+02:00">2020-04-14</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-14 10:32:23" itemprop="dateModified" datetime="2020-04-14T10:32:23+02:00">2020-04-14</time>
-              </span>
 
           
 
@@ -198,15 +192,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>开一栏，简单写写机器学习的内容，也顺便当记笔记了。如有不正确的地方，欢迎批评指正。Let’s get start.</p>
-<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>机器学习，是什么呢？用我自己的理解，就是一个模型，它能够吃进一大坨数据对（x,y)，经过消化，找到x和y的内在联系，并生成一个模型。利用这个模型，你再给它新的x，他就能找到对应的y。简单来说，就是因果归纳机。</p>
-<h4 id="地位"><a href="#地位" class="headerlink" title="地位"></a>地位</h4><p>人工智能<br> |<br> 机器学习<br> |<br> 深度学习</p>
-<h4 id="传统编程与机器学习"><a href="#传统编程与机器学习" class="headerlink" title="传统编程与机器学习"></a>传统编程与机器学习</h4><p><img src="images/img1.png" alt=""><br> 举例来说，传统编程是已知x和方程 y = 2x + 1（方程既程序），求y的值。但对于机器学习，我知道一堆x和y的值对，要求一个x和y的对应关系。</p>
-<hr>
-<h2 id="2-基本概念"><a href="#2-基本概念" class="headerlink" title="2.基本概念"></a>2.基本概念</h2><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p>1）特征：使我们表示数据的方式，是输入变量x<br> 2）标签：标签是指我们要预测的真实事物y<br> 3）样本：有标签的样本{特征，标签}，用于训练模型<br> 无标签的样本{特征，？}，用于对新数据作出预测<br> 4）模型：定义了特征与标签之间的关系，是执行预测的工具 (x —&gt; model —&gt; y)</p>
-<p>模型生命周期的两个重要阶段：训练和推断<br> 训练是向模型输入有标签的样本，让模型学习特征与标签之间的关系<br> 推断是将训练后的模型用于无标签样本，作出预测</p>
-<h4 id="机器学习的分类"><a href="#机器学习的分类" class="headerlink" title="机器学习的分类"></a>机器学习的分类</h4><p><img src="images/img2.png" alt=""><br>我们主要研究监督式机器学习,流程如下：<br><img src="./images/img3.png" alt=" "><br> 监督式机器学习，又分回归和分类两种任务：<br> 1）回归 ：回归模型用于预测连续值<br> 2）分类 ：分类模型用于预测离散值</p>
-<p>OK,几个概念介绍完了，上个例子便于理解，先来个简单的二分类问题<br>你带小朋友去野生动物园去看马，在马圈旁边，你指着一匹说这是马，另一匹也是马，这都是马。过一会旁边遛过来一头鹿，你说，这不是马。听着你不断唠叨，小朋友就会产生认知模式，学会分辨马这种动物。这个学习的过程就是<strong>训练</strong>，学会的认知模式就是<strong>模型</strong>。训练过后，再跑来一个动物，你让小朋友判断是不是马，这就是<strong>预测</strong>。如果你的模型够好，就不会发生指鹿为马的事情。</p>
+        <p>好的模型处于损失最低时，那么我们就要力求损失函数最小，降低损失。如果我们能够确定损失函数要往参数空间的哪个方向前进就再好不过了。 沿着这个方向， 我们可以知道所选择的每组新的超参数 都比之前一组参数的损失小一些。 要获得具体方向， 一种方法是计算梯度， 即与模型参数相关的损失函数的导数<br>我们在能够尽可能降低损失的方向上反复采取小步。 我们将这些小步称为梯度步长 （但它们实际上是负梯度步长） 这种优化策略称为梯度下降法 这样我们就能高效地更新模型参数。 可以将其视为一种迭代法，<strong>目的是找到损失函数的最小值</strong></p>
+<h4 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h4><p><img src="images/img4.png" alt=""></p>
+<p> “模型”部分将一个或多个特征作为输入， 然后返回一个预测作为输出</p>
+<p>“计算损失”部分是模型将要使用的损失函数， 计算预测标签和真实标签的差距</p>
+<p>“计算参数更新”部分， 机器学习系统就是在此部分检查损失函数的值， 并为模型的权重和偏置生成新值。 然后再重新评估， 这种学习过程会持续迭代。 直到总体损失不再变化或至少变化极其缓慢为止， 这时候，我们可以说该模型已收敛</p>
+<h4 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h4><p><img src="images/img5.png" alt=""></p>
+<p>我们随机选择一个初始值， 就可以看到对应的损失。 接着，我们可以计算负梯度， 从而得知往哪个方向前进， 才能尽可能减小损失。</p>
+<p>如果我们朝着这个方向沿着梯度前进， 就会看到新的损失。 可以继续 朝着这个方向沿着梯度前进， 直到超过局部最小值。</p>
+<p>而负梯度会指示我们沿着来时的方向返回。 在负梯度的方向上， 我们应该迈着多大的步伐前进？</p>
+<h4 id="学习率（步长）"><a href="#学习率（步长）" class="headerlink" title="学习率（步长）"></a>学习率（步长）</h4><p>学习率也就是沿负梯度方向迈步的大小，可自行调节</p>
+<p>如果学习速率非常小， 那么我们的梯度步伐就小而密。 那么这需要进行大量的计算，才能到达最小值，就会花费太长的学习时间<br>如果学习速率非常大， 那么我们会在负梯度方向迈出一大步，有可能超过局部最小值，损失甚至会比之前还大。在这种情况下，应该尝试将学习速率减慢，差不多减慢一个数量级</p>
+<h4 id="权重初始化"><a href="#权重初始化" class="headerlink" title="权重初始化"></a>权重初始化</h4><p>神经网络的形状不像碗， 而更像是<strong>蛋架</strong>。 有很多可能的最小值， 其中一些最小值要优于其他最小值<br><img src="images/img6.png" alt=""><br>这样看来，初始值确实很重要。 我们之后会进一步说明</p>
+<h4 id="随机梯度下降法和小批量梯度下降法"><a href="#随机梯度下降法和小批量梯度下降法" class="headerlink" title="随机梯度下降法和小批量梯度下降法"></a>随机梯度下降法和小批量梯度下降法</h4><p>我们先花点时间思考一下效率。 在计算损失函数的梯度时， 我们通过学过的数学知道， 应该计算数据集中所有样本的梯度。 只有这样才能确保我们的梯度步伐 正好朝着正确的方向</p>
+<p>对于样本数量， 达到百万或十亿的大型数据集。 要迈出每一步， 都需要进行大量的计算。 根据经验，人们发现， 无需使用整个数据集， 只要计算单个样本的损失函数， 那么大部分也都是适用的。 尽管这样需要迈出更多整体步伐， 但为获得最佳解决方案 而需要进行的总计算量往往也少得多。 这称为<strong>随机梯度下降法</strong></p>
+<p>在实际运用中， 我们采用折中的解决方案。 我们并非使用 一个样本或整个数据集， 而是使用一小部分样本， 差不多10-1000个样本。 这称为<strong>小批量梯度下降法</strong></p>
 
     </div>
 
@@ -222,13 +222,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/04/13/%E5%BC%80%E7%AF%87/" rel="prev" title="开篇">
-      <i class="fa fa-chevron-left"></i> 开篇
+    <a href="/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%882%EF%BC%89%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%8D%9F%E5%A4%B1/" rel="prev" title="机器学习（2）回归模型与损失">
+      <i class="fa fa-chevron-left"></i> 机器学习（2）回归模型与损失
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%882%EF%BC%89%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%8D%9F%E5%A4%B1/" rel="next" title="机器学习（2）回归模型与损失">
-      机器学习（2）回归模型与损失 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -287,7 +284,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简介"><span class="nav-number">1.</span> <span class="nav-text">1.简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#地位"><span class="nav-number">1.0.1.</span> <span class="nav-text">地位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传统编程与机器学习"><span class="nav-number">1.0.2.</span> <span class="nav-text">传统编程与机器学习</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-基本概念"><span class="nav-number">2.</span> <span class="nav-text">2.基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-number">2.0.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#机器学习的分类"><span class="nav-number">2.0.2.</span> <span class="nav-text">机器学习的分类</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#迭代方法"><span class="nav-number">1.</span> <span class="nav-text">迭代方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度下降法"><span class="nav-number">2.</span> <span class="nav-text">梯度下降法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#学习率（步长）"><span class="nav-number">3.</span> <span class="nav-text">学习率（步长）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#权重初始化"><span class="nav-number">4.</span> <span class="nav-text">权重初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机梯度下降法和小批量梯度下降法"><span class="nav-number">5.</span> <span class="nav-text">随机梯度下降法和小批量梯度下降法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
