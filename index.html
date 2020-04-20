@@ -151,6 +151,143 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/20/Python%E6%95%99%E7%A8%8B(2)---%E5%8F%98%E9%87%8F(%E4%B8%8A)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Song，Xiangyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bruce S 的停机坪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/20/Python%E6%95%99%E7%A8%8B(2)---%E5%8F%98%E9%87%8F(%E4%B8%8A)/" class="post-title-link" itemprop="url">Python教程(2)---变量(上)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-20 17:14:32" itemprop="dateCreated datePublished" datetime="2020-04-20T17:14:32+02:00">2020-04-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>变量：代表某个值的名称，比如a<br>赋值语句 a = 20</p>
+<p>python可以直接以如下形式交换两个变量的值（不需要中间变量）<br>a, b = b, a<br>例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; 5</span><br><span class="line">b &#x3D; 9</span><br><span class="line">a, b &#x3D; b, a</span><br><span class="line">print(a, b)</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9  5</span><br></pre></td></tr></table></figure>
+
+<h2 id="变量命名规范"><a href="#变量命名规范" class="headerlink" title="变量命名规范"></a>变量命名规范</h2><ul>
+<li>标识符的第一个字符必须是字母或下划线</li>
+<li>标识符名称的其他部分可以由字母、下划线、或数字组成</li>
+<li>标识符是对大小写敏感的（a和A是不一样的变量名）</li>
+</ul>
+<h2 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h2><h4 id="1）数值类型"><a href="#1）数值类型" class="headerlink" title="1）数值类型"></a>1）数值类型</h4><p>变量为数字，最常见的一种，没啥好说<br>列举一些函数和运算：<br>number = 10<br>number =  number + 10<br>number += 10 #在自己基础上加十<br>number /= 10</p>
+<p>min(10, 23, 76, 5) #返回最小值<br>max(10, 23, 76, 5)</p>
+<p>divmod(10, 3) #返回10除以3的商和余数</p>
+<p>math.pow(3, 10)  #3的十次方<br>math.radians(180)  #角度转弧度</p>
+<h4 id="2）-bool类型"><a href="#2）-bool类型" class="headerlink" title="2） bool类型"></a>2） bool类型</h4><p>有两个值：True， False两种<br>True ==1, False == 0</p>
+<p>bool运算：<br>与运算：True and False (一假即假)<br>或运算：True or False （一真即真）<br>非运算：not True</p>
+<p>有以下操作符会返回bool值：</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>==</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>is</td>
+<td>是相同对象</td>
+</tr>
+</tbody></table>
+<h4 id="3）字符串类型"><a href="#3）字符串类型" class="headerlink" title="3）字符串类型"></a>3）字符串类型</h4><p>1&gt;字符串运算:</p>
+<ul>
+<li><p>加法操作<br>line_1 = ‘Hello’<br>line_2 = ‘world’<br>print(line_1 + line_2)<br>把两个字符串拼接</p>
+</li>
+<li><p>乘法操作<br>line = ‘Hello ‘<br>print(line*5)<br>打印5遍</p>
+</li>
+<li><p>len(line)<br>查看字符串长度</p>
+</li>
+<li><p>id(line)<br>查看字符串在内存中的地址</p>
+</li>
+</ul>
+<p>2&gt;切片操作<br>line = ‘hao hao xue xi tian tian xiang shang’<br><code>print(line[ :10])</code>  #取前十个字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hao hao xu</span><br></pre></td></tr></table></figure>
+
+<p><code>print(0:15:2)</code>#前十个字符，隔一个取一个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hohox</span><br></pre></td></tr></table></figure>
+
+<p><code>print(line[-10: ])</code> #取后十个字符<br><code>print(line[5])</code>#取单字符</p>
+<p>字符串的index从0开始编。</p>
+<p>3&gt;函数<br>输入line.再按Tab键，显示所有能对字符串line执行的操作<br>选定一个操作在后面加问号运行，显示相应的介绍<br>例如：<br><code>line.capitalize?</code><br>得到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Signature: line.capitalize()</span><br><span class="line">Docstring:</span><br><span class="line">Return a capitalized version of the string.</span><br><span class="line"></span><br><span class="line">More specifically, make the first character have upper case and the rest lower</span><br><span class="line">case.</span><br><span class="line">Type:      builtin_function_or_method</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/20/Python%E6%95%99%E7%A8%8B(1)---%E7%AE%80%E4%BB%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -174,8 +311,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-04-20 15:01:30" itemprop="dateCreated datePublished" datetime="2020-04-20T15:01:30+02:00">2020-04-20</time>
+              <time title="创建时间：2020-04-20 15:01:30 / 修改时间：15:43:42" itemprop="dateCreated datePublished" datetime="2020-04-20T15:01:30+02:00">2020-04-20</time>
             </span>
 
           
@@ -189,20 +327,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>##Python特性<br>1）语法简单，容易学习<br>2）跨平台（Windows/Mac OS/Linux）<br>3）功能强大，做网站，爬虫，机器学习。。。<br>4）拥有丰富强大的第三方库</p>
-<p>##例子<br>####1）Python之禅<br>输入<code>import this</code><br>得到如下输出：</p>
+          <h2 id="Python特性"><a href="#Python特性" class="headerlink" title="Python特性"></a>Python特性</h2><p>1）语法简单，容易学习<br>2）跨平台（Windows/Mac OS/Linux）<br>3）功能强大，做网站，爬虫，机器学习。。。<br>4）拥有丰富强大的第三方库</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h4 id="1）Python之禅"><a href="#1）Python之禅" class="headerlink" title="1）Python之禅"></a>1）Python之禅</h4><p>输入<code>import this</code><br>得到如下输出：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">The Zen of Python, by Tim Peters</span><br><span class="line"></span><br><span class="line">Beautiful is better than ugly.</span><br><span class="line">Explicit is better than implicit.</span><br><span class="line">Simple is better than complex.</span><br><span class="line">Complex is better than complicated.</span><br><span class="line">Flat is better than nested.</span><br><span class="line">Sparse is better than dense.</span><br><span class="line">Readability counts.</span><br><span class="line">Special cases aren&#39;t special enough to break the rules.</span><br><span class="line">Although practicality beats purity.</span><br><span class="line">Errors should never pass silently.</span><br><span class="line">Unless explicitly silenced.</span><br><span class="line">In the face of ambiguity, refuse the temptation to guess.</span><br><span class="line">There should be one-- and preferably only one --obvious way to do it.</span><br><span class="line">Although that way may not be obvious at first unless you&#39;re Dutch.</span><br><span class="line">Now is better than never.</span><br><span class="line">Although never is often better than *right* now.</span><br><span class="line">If the implementation is hard to explain, it&#39;s a bad idea.</span><br><span class="line">If the implementation is easy to explain, it may be a good idea.</span><br><span class="line">Namespaces are one honking great idea -- let&#39;s do more of those!</span><br></pre></td></tr></table></figure>
 <p>网上搜到的翻译：<br>美 优于 丑<br>明确 优于 隐晦<br>简单 优于 复杂<br>复杂 也好过 繁复<br>扁平 优于 嵌套<br>稀疏 优于 拥挤<br>可读性很重要<br>固然代码实用与否 比洁癖更重要，<br>我们以为的特例也往往没有特殊到必须打破上述规则的程度<br>除非刻意地静默，<br>否则不要无故忽视异常<br>如果遇到模棱两可的逻辑，请不要自作聪明地瞎猜。<br>应该提供一种，且最好只提供一种，一目了然的解决方案<br>当然这是没法一蹴而就的，除非你是荷兰人<br>固然，立刻着手 好过 永远不做。<br>然而，永远不做 也好过 不审慎思考一撸袖子就莽着干<br>如果你的实现很难解释，它就一定不是个好主意<br>即使你的实现简单到爆，它也有可能是个好办法<br>命名空间大法好，不搞不是地球人！</p>
 <p>这是python的19条黄金准则<br>May the Zen be with you!</p>
 <p><strong>注：</strong>import作用是引用模块</p>
-<p>####2)打印<br><code>print(&#39;Hello&#39;,  &#39;world&#39;)</code><br>得到</p>
+<h4 id="2-打印"><a href="#2-打印" class="headerlink" title="2)打印"></a>2)打印</h4><p><code>print(&#39;Hello&#39;,  &#39;world&#39;)</code><br>得到</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello world</span><br></pre></td></tr></table></figure>
 <p>括号中书写打印的对象，对象用逗号隔开<br>打印字符串，用单引号’…’或者双引号“…“都可</p>
-<p>如果想要打印单引号这个字符，在单引号前加一个转义字符\ ,打印双引号同理</p>
-<p>####3）计算器<br>计算加减乘除，分别用’’ + ‘’，’’ — ‘’，’’ * ‘’ , ‘’ / ‘’ 运算符<br>求余数’’ % ‘’<br>乘方’’ ** ‘’<br>例如<code>print(10**3)</code></p>
+<p>如果想要打印单引号这个字符，在单引号前加一个转义字符\ ,打印双引号同理<br><strong>附：</strong>format（ ）增强格式化字符串函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; 10</span><br><span class="line">b &#x3D; 15</span><br><span class="line">c &#x3D; a + b</span><br><span class="line">print(&quot;a的值为: &#123;&#125;; b的值为:&#123;&#125;; a和b的和为:&#123;&#125;&quot;.format(a, b, c))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a的值为: 10; b的值为:15; a和b的和为:25</span><br></pre></td></tr></table></figure>
+<p>format小括号里的对象，依次替换前面的大括号</p>
+<h4 id="3）计算器"><a href="#3）计算器" class="headerlink" title="3）计算器"></a>3）计算器</h4><p>计算加减乘除，分别用’’ + ‘’，’’ — ‘’，’’ * ‘’ , ‘’ / ‘’ 运算符<br>求余数’’ % ‘’<br>乘方’’ ** ‘’<br>例如<code>print(10**3)</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1000</span><br></pre></td></tr></table></figure>
-
-
+<p>另外还可以用math模块进行数学计算<br>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line"></span><br><span class="line">print(math.pi)</span><br><span class="line">print(math.sin(math.pi&#x2F;2))</span><br><span class="line">print(math.floor(3.1415926)) #向下取整</span><br><span class="line">print(math.ceil(3.1415926))  #向上取整</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3.141592653589793</span><br><span class="line">1.0</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<p><strong>附：</strong>round( )函数确定保留小数位数<br><code>round(100/3, 4)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">33.3333</span><br></pre></td></tr></table></figure>
 
 
       
@@ -583,7 +728,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

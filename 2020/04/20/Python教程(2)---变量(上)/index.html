@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":false,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="1.回归模型机器学习中的模型就是我们忙活半天想要得到的产物，方程如下： $$\hat{y} &#x3D; b + w_1x_1 + w_2x_2 + ……$$ \(\hat{y}\)：预测标签（理想输出值）b ：偏差，有时用$w_0$表示\( w_1 \)：特征1的权重\(x_1\)：特征1（一直输入项）……刚开始模型一片空白，参数w和b都是待定的，通过训练来得到，那什么又是训练呢？ 2.训练与损失训练">
+  <meta name="description" content="综述变量：代表某个值的名称，比如a赋值语句 a &#x3D; 20 python可以直接以如下形式交换两个变量的值（不需要中间变量）a, b &#x3D; b, a例如: 1234a &#x3D; 5b &#x3D; 9a, b &#x3D; b, aprint(a, b) 输出 19  5  变量命名规范 标识符的第一个字符必须是字母或下划线 标识符名称的其他部分可以由字母、下划线、或数字组成 标识符是对大小写敏感">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习（2）回归模型与损失">
-<meta property="og:url" content="http://yoursite.com/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%882%EF%BC%89%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%8D%9F%E5%A4%B1/index.html">
+<meta property="og:title" content="Python教程(2)---变量(上)">
+<meta property="og:url" content="http://yoursite.com/2020/04/20/Python%E6%95%99%E7%A8%8B(2)---%E5%8F%98%E9%87%8F(%E4%B8%8A)/index.html">
 <meta property="og:site_name" content="Bruce S 的停机坪">
-<meta property="og:description" content="1.回归模型机器学习中的模型就是我们忙活半天想要得到的产物，方程如下： $$\hat{y} &#x3D; b + w_1x_1 + w_2x_2 + ……$$ \(\hat{y}\)：预测标签（理想输出值）b ：偏差，有时用$w_0$表示\( w_1 \)：特征1的权重\(x_1\)：特征1（一直输入项）……刚开始模型一片空白，参数w和b都是待定的，通过训练来得到，那什么又是训练呢？ 2.训练与损失训练">
+<meta property="og:description" content="综述变量：代表某个值的名称，比如a赋值语句 a &#x3D; 20 python可以直接以如下形式交换两个变量的值（不需要中间变量）a, b &#x3D; b, a例如: 1234a &#x3D; 5b &#x3D; 9a, b &#x3D; b, aprint(a, b) 输出 19  5  变量命名规范 标识符的第一个字符必须是字母或下划线 标识符名称的其他部分可以由字母、下划线、或数字组成 标识符是对大小写敏感">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-14T07:09:34.000Z">
-<meta property="article:modified_time" content="2020-04-14T10:08:17.125Z">
+<meta property="article:published_time" content="2020-04-20T15:14:32.120Z">
+<meta property="article:modified_time" content="2020-04-20T15:14:32.120Z">
 <meta property="article:author" content="Song，Xiangyu">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%882%EF%BC%89%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%8D%9F%E5%A4%B1/">
+<link rel="canonical" href="http://yoursite.com/2020/04/20/Python%E6%95%99%E7%A8%8B(2)---%E5%8F%98%E9%87%8F(%E4%B8%8A)/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>机器学习（2）回归模型与损失 | Bruce S 的停机坪</title>
+  <title>Python教程(2)---变量(上) | Bruce S 的停机坪</title>
   
 
 
@@ -156,7 +156,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%882%EF%BC%89%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%8D%9F%E5%A4%B1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/20/Python%E6%95%99%E7%A8%8B(2)---%E5%8F%98%E9%87%8F(%E4%B8%8A)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -169,7 +169,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          机器学习（2）回归模型与损失
+          Python教程(2)---变量(上)
         </h1>
 
         <div class="post-meta">
@@ -178,18 +178,8 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-14 09:09:34 / 修改时间：12:08:17" itemprop="dateCreated datePublished" datetime="2020-04-14T09:09:34+02:00">2020-04-14</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
-                </span>
+              <time title="创建时间：2020-04-20 17:14:32" itemprop="dateCreated datePublished" datetime="2020-04-20T17:14:32+02:00">2020-04-20</time>
             </span>
 
           
@@ -203,15 +193,86 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<h2 id="1-回归模型"><a href="#1-回归模型" class="headerlink" title="1.回归模型"></a>1.回归模型</h2><p>机器学习中的模型就是我们忙活半天想要得到的产物，方程如下：</p>
-<p>$$\hat{y} = b + w_1x_1 + w_2x_2 + ……$$</p>
-<p>\(\hat{y}\)：预测标签（理想输出值）<br>b ：偏差，有时用$w_0$表示<br>\( w_1 \)：特征1的权重<br>\(x_1\)：特征1（一直输入项）<br>……<br>刚开始模型一片空白，参数w和b都是待定的，通过训练来得到，那什么又是训练呢？</p>
-<h2 id="2-训练与损失"><a href="#2-训练与损失" class="headerlink" title="2.训练与损失"></a>2.训练与损失</h2><p><strong>训练模型</strong>表示通过有标签样本来学习所有权重和偏差的理想值<br><strong>损失</strong>是对糟糕预测的惩罚。 也就是说，损失是一个数值， 表示对于单个样本而言模型预测的准确程度<br><strong>训练模型的目标</strong>是从所有样本中找到一组平均损失“较小”的权重和偏差，此时的模型就是我们想要的，性能最好的模型</p>
-<h4 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h4><p>最常见的损失函数有如下几种：<br><strong>1)  平方损失（L2损失）</strong><br>单个样本的平方损失， = 预测值和标签值之差的平方 = (观察值 - 预测值)的平方 = (y - \(\hat{y}\))的平方<br><strong>2）均方误差（MSE）</strong><br>指的是每个样本的平均平方损失。 求出各个样本的所有平方损失之和， 然后除以样本数量<br>$$MSE = \frac{1}{N} \sum_{(x,y)\in D} (y - \hat{y}）^2$$<br>x：预测时使用的已知特征集<br>y：样本的标签<br>\(\hat{y}\)：模型预测出的标签，\(\hat{y}\) = prediction(x)</p>
-<hr>
+        <h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>变量：代表某个值的名称，比如a<br>赋值语句 a = 20</p>
+<p>python可以直接以如下形式交换两个变量的值（不需要中间变量）<br>a, b = b, a<br>例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; 5</span><br><span class="line">b &#x3D; 9</span><br><span class="line">a, b &#x3D; b, a</span><br><span class="line">print(a, b)</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9  5</span><br></pre></td></tr></table></figure>
+
+<h2 id="变量命名规范"><a href="#变量命名规范" class="headerlink" title="变量命名规范"></a>变量命名规范</h2><ul>
+<li>标识符的第一个字符必须是字母或下划线</li>
+<li>标识符名称的其他部分可以由字母、下划线、或数字组成</li>
+<li>标识符是对大小写敏感的（a和A是不一样的变量名）</li>
+</ul>
+<h2 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h2><h4 id="1）数值类型"><a href="#1）数值类型" class="headerlink" title="1）数值类型"></a>1）数值类型</h4><p>变量为数字，最常见的一种，没啥好说<br>列举一些函数和运算：<br>number = 10<br>number =  number + 10<br>number += 10 #在自己基础上加十<br>number /= 10</p>
+<p>min(10, 23, 76, 5) #返回最小值<br>max(10, 23, 76, 5)</p>
+<p>divmod(10, 3) #返回10除以3的商和余数</p>
+<p>math.pow(3, 10)  #3的十次方<br>math.radians(180)  #角度转弧度</p>
+<h4 id="2）-bool类型"><a href="#2）-bool类型" class="headerlink" title="2） bool类型"></a>2） bool类型</h4><p>有两个值：True， False两种<br>True ==1, False == 0</p>
+<p>bool运算：<br>与运算：True and False (一假即假)<br>或运算：True or False （一真即真）<br>非运算：not True</p>
+<p>有以下操作符会返回bool值：</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>==</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>is</td>
+<td>是相同对象</td>
+</tr>
+</tbody></table>
+<h4 id="3）字符串类型"><a href="#3）字符串类型" class="headerlink" title="3）字符串类型"></a>3）字符串类型</h4><p>1&gt;字符串运算:</p>
+<ul>
+<li><p>加法操作<br>line_1 = ‘Hello’<br>line_2 = ‘world’<br>print(line_1 + line_2)<br>把两个字符串拼接</p>
+</li>
+<li><p>乘法操作<br>line = ‘Hello ‘<br>print(line*5)<br>打印5遍</p>
+</li>
+<li><p>len(line)<br>查看字符串长度</p>
+</li>
+<li><p>id(line)<br>查看字符串在内存中的地址</p>
+</li>
+</ul>
+<p>2&gt;切片操作<br>line = ‘hao hao xue xi tian tian xiang shang’<br><code>print(line[ :10])</code>  #取前十个字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hao hao xu</span><br></pre></td></tr></table></figure>
+
+<p><code>print(0:15:2)</code>#前十个字符，隔一个取一个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hohox</span><br></pre></td></tr></table></figure>
+
+<p><code>print(line[-10: ])</code> #取后十个字符<br><code>print(line[5])</code>#取单字符</p>
+<p>字符串的index从0开始编。</p>
+<p>3&gt;函数<br>输入line.再按Tab键，显示所有能对字符串line执行的操作<br>选定一个操作在后面加问号运行，显示相应的介绍<br>例如：<br><code>line.capitalize?</code><br>得到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Signature: line.capitalize()</span><br><span class="line">Docstring:</span><br><span class="line">Return a capitalized version of the string.</span><br><span class="line"></span><br><span class="line">More specifically, make the first character have upper case and the rest lower</span><br><span class="line">case.</span><br><span class="line">Type:      builtin_function_or_method</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
     </div>
 
@@ -227,13 +288,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/04/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E7%AE%80%E4%BB%8B%E5%8F%8A%E6%A6%82%E5%BF%B5/" rel="prev" title="机器学习(1)简介及概念">
-      <i class="fa fa-chevron-left"></i> 机器学习(1)简介及概念
+    <a href="/2020/04/20/Python%E6%95%99%E7%A8%8B(1)---%E7%AE%80%E4%BB%8B/" rel="prev" title="Python教程(1)---简介">
+      <i class="fa fa-chevron-left"></i> Python教程(1)---简介
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/14/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%883%EF%BC%89%E9%99%8D%E4%BD%8E%E6%8D%9F%E5%A4%B1/" rel="next" title="机器学习（3）降低损失">
-      机器学习（3）降低损失 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -292,7 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-回归模型"><span class="nav-number">1.</span> <span class="nav-text">1.回归模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-训练与损失"><span class="nav-number">2.</span> <span class="nav-text">2.训练与损失</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#损失函数"><span class="nav-number">2.0.1.</span> <span class="nav-text">损失函数</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#综述"><span class="nav-number">1.</span> <span class="nav-text">综述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量命名规范"><span class="nav-number">2.</span> <span class="nav-text">变量命名规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量类型"><span class="nav-number">3.</span> <span class="nav-text">变量类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1）数值类型"><span class="nav-number">3.0.1.</span> <span class="nav-text">1）数值类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2）-bool类型"><span class="nav-number">3.0.2.</span> <span class="nav-text">2） bool类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3）字符串类型"><span class="nav-number">3.0.3.</span> <span class="nav-text">3）字符串类型</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
