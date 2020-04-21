@@ -151,6 +151,84 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/Python%E6%95%99%E7%A8%8B(4)---%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Song，Xiangyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bruce S 的停机坪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/21/Python%E6%95%99%E7%A8%8B(4)---%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" class="post-title-link" itemprop="url">Python教程(4)---条件判断</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-21 10:49:13 / 修改时间：10:55:17" itemprop="dateCreated datePublished" datetime="2020-04-21T10:49:13+02:00">2020-04-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Python教程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>#条件判断<br>##伪代码(格式)<br>（机理与代码相似，但不能运行）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if condition 1:</span><br><span class="line">        do something</span><br><span class="line">elif condition 2:</span><br><span class="line">		do something</span><br><span class="line">else:</span><br><span class="line">        do something</span><br></pre></td></tr></table></figure>
+<p>我们用一个实际问题来演示if语句：<br>网吧充值，充多于30元送5元，多余50元送10元，你充值了45元，你最终账户余额为多少？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">recharge_amount &#x3D; 50</span><br><span class="line">if recharge_amount &gt; 30:</span><br><span class="line">	bonus &#x3D; 5</span><br><span class="line">elif recharge_amount &gt; 50:</span><br><span class="line">	bonus &#x3D; 10</span><br><span class="line">else:</span><br><span class="line">	bonus &#x3D; 0</span><br><span class="line">balance &#x3D; recharge_amount  + bonus</span><br><span class="line">print(&#39;你的账户余额为：&#123;&#125;元&#39;.format(balance))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你的账户余额为：50元</span><br></pre></td></tr></table></figure>
+<h2 id="if语句特点"><a href="#if语句特点" class="headerlink" title="if语句特点"></a>if语句特点</h2><h4 id="1）条件语句可以任意组合"><a href="#1）条件语句可以任意组合" class="headerlink" title="1）条件语句可以任意组合"></a>1）条件语句可以任意组合</h4><ul>
+<li>第一层意思：elif可以有任意多个；elif和else可有可无</li>
+<li>第二层意思：条件语句可以嵌套<h4 id="2）condition其实是一个bool类型的值"><a href="#2）condition其实是一个bool类型的值" class="headerlink" title="2）condition其实是一个bool类型的值"></a>2）condition其实是一个bool类型的值</h4>所以condition可以用and，or和not运算</li>
+</ul>
+<h2 id="条件判断的近亲–断言"><a href="#条件判断的近亲–断言" class="headerlink" title="条件判断的近亲–断言"></a>条件判断的近亲–断言</h2><h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if not condition:</span><br><span class="line">		crash program</span><br></pre></td></tr></table></figure>
+<p> 如果不是这样，程序就崩溃</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/Python%E6%95%99%E7%A8%8B(3)---%E5%8F%98%E9%87%8F(%E4%B8%8B)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1030,7 +1108,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
