@@ -151,6 +151,120 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/Python%E6%95%99%E7%A8%8B(3)---%E5%8F%98%E9%87%8F(%E4%B8%8B)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Song，Xiangyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bruce S 的停机坪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/21/Python%E6%95%99%E7%A8%8B(3)---%E5%8F%98%E9%87%8F(%E4%B8%8B)/" class="post-title-link" itemprop="url">Python教程(3)---变量(下)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-21 09:54:18 / 修改时间：09:55:47" itemprop="dateCreated datePublished" datetime="2020-04-21T09:54:18+02:00">2020-04-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Python教程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="4）列表类型"><a href="#4）列表类型" class="headerlink" title="4）列表类型"></a>4）列表类型</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><h4 id="空列表"><a href="#空列表" class="headerlink" title="空列表"></a>空列表</h4><p><code>varibals = [ ]</code><br><code>varibals = list( )</code></p>
+<h4 id="非空列表"><a href="#非空列表" class="headerlink" title="非空列表"></a>非空列表</h4><p>列表可以容纳任意类型，任意数量的对象<br><code>varibals = [1, 2, 3, ‚python’， ‚c++’，[ ], [100, 23] ]</code></p>
+<h3 id="append函数添加对象"><a href="#append函数添加对象" class="headerlink" title="append函数添加对象"></a>append函数添加对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">varibals &#x3D; [ ]</span><br><span class="line">varibals.append(1)  </span><br><span class="line">varibals.append(&#39;python&#39;)</span><br><span class="line">print(varibals)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, &#39;python&#39;]</span><br></pre></td></tr></table></figure>
+<p><strong>注：</strong>列表是可变类型，可以单独替换某个对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list &#x3D; [3, 3, 3, 3, 3, 3, 3]</span><br><span class="line">list[2] &#x3D; 5</span><br><span class="line">print(list)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[3, 3, 5, 3, 3, 3, 3]</span><br></pre></td></tr></table></figure>
+
+<h3 id="其他函数"><a href="#其他函数" class="headerlink" title="其他函数"></a>其他函数</h3><p>和字符串函数操作一样，在列表名称后加句号添加函数<br>这里着重讲解下.copy( )和.deepcopy( )</p>
+<ul>
+<li>寻常意义的复制就是深复制，即将被复制对象完全再复制一遍作为独立的新个体单独存在。所以改变原有被复制对象不会对已经复制出来的新对象产生影响<ul>
+<li>而浅复制copy并不会产生一个独立的对象单独存在，他只是将原有的数据块打上一个新标签，所以当其中一个标签被改变的时候，数据块就会发生变化，另一个标签也会随之改变。</li>
+</ul>
+</li>
+</ul>
+<p>对于简单的 object，用copy 和 deep copy 没区别；而对于复杂的 object， 如 list 中套着 list 的情况，copy 中的 子list，并未从原 object 真的独立出来。也就是说，如果你改变原 object 的子 list 中的一个元素，你的 copy 就会跟着一起变,如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from copy import deepcopy</span><br><span class="line"></span><br><span class="line">var &#x3D; [1,2,[3,4]]</span><br><span class="line"></span><br><span class="line">copy1 &#x3D; var.copy()</span><br><span class="line">copy2 &#x3D; deepcopy(var)</span><br><span class="line"></span><br><span class="line">origin[2][0] &#x3D; &quot;wow&quot;</span><br><span class="line">print(origin)   </span><br><span class="line">print(copy1)    </span><br><span class="line">print(copy2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, [&#39;wow&#39;, 4]]</span><br><span class="line">[1, 2, [3, 4]]</span><br><span class="line">[1, 2, [3, 4]]</span><br></pre></td></tr></table></figure>
+<p><strong>注：</strong>deepcopy得从copy模块调用</p>
+<h3 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h3><p><strong>列表和字符串统称序列.</strong>列表是一种容器型序列；字符串是一种扁平型序列<br>序列都可以加法乘法切片操作</p>
+<h2 id="5）元组类型-tuple"><a href="#5）元组类型-tuple" class="headerlink" title="5）元组类型(tuple)"></a>5）元组类型(tuple)</h2><p>相当于一种不可变的列表,比较少用</p>
+<h4 id="空元组"><a href="#空元组" class="headerlink" title="空元组"></a>空元组</h4><p><code>var = tuple( )</code><br><code>var = ( )</code></p>
+<h4 id="非空元组"><a href="#非空元组" class="headerlink" title="非空元组"></a>非空元组</h4><p><code>var = (1, 2, 3, [4, 5], &#39;haha&#39;)</code></p>
+<h2 id="6）字典类型"><a href="#6）字典类型" class="headerlink" title="6）字典类型"></a>6）字典类型</h2><p>和现实字典一样，一个关键字在字典中能映射到对应的值</p>
+<h3 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h3><h4 id="定义空字典"><a href="#定义空字典" class="headerlink" title="定义空字典"></a>定义空字典</h4><p><code>var = { }</code><br><code>var = dict( )</code></p>
+<h4 id="非空字典"><a href="#非空字典" class="headerlink" title="非空字典"></a>非空字典</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var &#x3D; &#123;</span><br><span class="line">	     &#39;你&#39; : 10,</span><br><span class="line">	     &#39;好&#39; : 30</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="fromkeys函数"><a href="#fromkeys函数" class="headerlink" title="fromkeys函数"></a>fromkeys函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">students &#x3D; [&#39;song&#39;, &#39;li&#39;, &#39;wang&#39;, &#39;sun&#39;]</span><br><span class="line">money &#x3D; dict.fromkeys(students, 100)</span><br><span class="line">print(money)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#39;song&#39;: 100, &#39;li&#39;: 100, &#39;wang&#39;: 100, &#39;sun&#39;: 100&#125;</span><br></pre></td></tr></table></figure>
+<p> 把一个列表都映射到同一个值，快捷生成字典</p>
+<h4 id="访问字典中的关键字或值"><a href="#访问字典中的关键字或值" class="headerlink" title="访问字典中的关键字或值"></a>访问字典中的关键字或值</h4><p><code>money[&#39;song&#39;]</code>#访问单个值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">100</span><br></pre></td></tr></table></figure>
+
+<p><code>money.keys( )</code>#访问所有关键字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict_keys([&#39;song&#39;, &#39;li&#39;, &#39;wang&#39;, &#39;sun&#39;])</span><br></pre></td></tr></table></figure>
+
+<p><code>money.values( )</code>#访问所有值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict_values([100, 100, 100, 100])</span><br></pre></td></tr></table></figure>
+
+<p><code>money.items( )</code>#把每个映射列出来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict_items([(&#39;song&#39;, 100), (&#39;li&#39;, 100), (&#39;wang&#39;, 100), (&#39;sun&#39;, 100)])</span><br></pre></td></tr></table></figure>
+
+<h4 id="其他函数-1"><a href="#其他函数-1" class="headerlink" title="其他函数"></a>其他函数</h4><p><code>money.pop(&#39;li&#39;)</code>#删除一条映射</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#39;song&#39;: 100, &#39;wang&#39;: 100, &#39;sun&#39;: 100&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>money.setdefault(&#39;wu&#39;, 300)</code> #寻找一个关键字，并输出其对应值；若找不到，就添加这个映射</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#39;song&#39;: 100, &#39;wang&#39;: 100, &#39;sun&#39;: 100, &#39;wu&#39;: 300&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%885%EF%BC%89%E8%AE%AD%E7%BB%83%E9%9B%86%E5%92%8C%E6%B5%8B%E8%AF%95%E9%9B%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -324,10 +438,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-20 17:14:32 / 修改时间：17:45:00" itemprop="dateCreated datePublished" datetime="2020-04-20T17:14:32+02:00">2020-04-20</time>
+              <time title="创建时间：2020-04-20 17:14:32" itemprop="dateCreated datePublished" datetime="2020-04-20T17:14:32+02:00">2020-04-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-21 09:55:49" itemprop="dateModified" datetime="2020-04-21T09:55:49+02:00">2020-04-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -349,23 +469,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>变量：代表某个值的名称，比如a<br>赋值语句 a = 20</p>
+          <h1 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h1><p><strong>变量：</strong>代表某个值的名称，比如a<br>赋值语句 a = 20</p>
 <p>python可以直接以如下形式交换两个变量的值（不需要中间变量）<br>a, b = b, a<br>例如:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; 5</span><br><span class="line">b &#x3D; 9</span><br><span class="line">a, b &#x3D; b, a</span><br><span class="line">print(a, b)</span><br></pre></td></tr></table></figure>
 <p>输出</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9  5</span><br></pre></td></tr></table></figure>
 
-<h2 id="变量命名规范"><a href="#变量命名规范" class="headerlink" title="变量命名规范"></a>变量命名规范</h2><ul>
+<h1 id="变量命名规范"><a href="#变量命名规范" class="headerlink" title="变量命名规范"></a>变量命名规范</h1><ul>
 <li>标识符的第一个字符必须是字母或下划线</li>
 <li>标识符名称的其他部分可以由字母、下划线、或数字组成</li>
 <li>标识符是对大小写敏感的（a和A是不一样的变量名）</li>
 </ul>
-<h2 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h2><h4 id="1）数值类型"><a href="#1）数值类型" class="headerlink" title="1）数值类型"></a>1）数值类型</h4><p>变量为数字，最常见的一种，没啥好说<br>列举一些函数和运算：<br><code>number = 10</code><br><code>number =  number + 10</code><br><code>number += 10</code>#在自己基础上加十<br><code>number /= 10</code></p>
+<h1 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h1><h2 id="1）数值类型"><a href="#1）数值类型" class="headerlink" title="1）数值类型"></a>1）数值类型</h2><p>变量为数字，最常见的一种，没啥好说<br>列举一些函数和运算：<br><code>number = 10</code><br><code>number =  number + 10</code><br><code>number += 10</code>#在自己基础上加十<br><code>number /= 10</code></p>
 <p><code>min(10, 23, 76, 5)</code>#返回最小值<br><code>max(10, 23, 76, 5)</code></p>
 <p><code>divmod(10, 3)</code> #返回10除以3的商和余数</p>
 <p><code>math.pow(3, 10)</code>  #3的十次方<br><code>math.radians(180)</code>  #角度转弧度</p>
-<h4 id="2）-bool类型"><a href="#2）-bool类型" class="headerlink" title="2） bool类型"></a>2） bool类型</h4><p>有两个值：True， False两种<br>True ==1, False == 0</p>
-<p>bool运算：<br>与运算：True and False (一假即假)<br>或运算：True or False （一真即真）<br>非运算：not True</p>
+<h2 id="2）-bool类型"><a href="#2）-bool类型" class="headerlink" title="2） bool类型"></a>2） bool类型</h2><p>有两个值：True， False两种<br>True ==1, False == 0</p>
+<h3 id="bool运算："><a href="#bool运算：" class="headerlink" title="bool运算："></a>bool运算：</h3><p>与运算：True and False (一假即假)<br>或运算：True or False （一真即真）<br>非运算：not True</p>
 <p>有以下操作符会返回bool值：</p>
 <table>
 <thead>
@@ -403,8 +523,7 @@
 <td>是相同对象</td>
 </tr>
 </tbody></table>
-<h4 id="3）字符串类型"><a href="#3）字符串类型" class="headerlink" title="3）字符串类型"></a>3）字符串类型</h4><p>1&gt;字符串运算:</p>
-<ul>
+<h2 id="3）字符串类型"><a href="#3）字符串类型" class="headerlink" title="3）字符串类型"></a>3）字符串类型</h2><h3 id="1-gt-字符串运算"><a href="#1-gt-字符串运算" class="headerlink" title="1&gt;字符串运算:"></a>1&gt;字符串运算:</h3><ul>
 <li><p>加法操作</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">line_1 &#x3D; &#39;Hello&#39;</span><br><span class="line">line_2 &#x3D; &#39;world&#39;</span><br><span class="line">print(line_1 + line_2)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Helloworld</span><br></pre></td></tr></table></figure>
@@ -420,7 +539,7 @@
 <li><p><code>id(line)</code><br>查看字符串在内存中的地址</p>
 </li>
 </ul>
-<p>2&gt;切片操作<br><code>line = &#39;hao hao xue xi tian tian xiang shang&#39;</code></p>
+<h3 id="2-gt-切片操作"><a href="#2-gt-切片操作" class="headerlink" title="2&gt;切片操作"></a>2&gt;切片操作</h3><p><code>line = &#39;hao hao xue xi tian tian xiang shang&#39;</code></p>
 <p><code>print(line[ :10])</code>  #取前十个字符</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hao hao xu</span><br></pre></td></tr></table></figure>
 
@@ -429,13 +548,14 @@
 
 <p><code>print(line[-10: ])</code> #取后十个字符<br><code>print(line[5])</code>#取单字符</p>
 <p>字符串的index从0开始编。</p>
-<p>3&gt;函数<br>输入line.再按Tab键，显示所有能对字符串line执行的操作<br>选定一个操作在后面加问号运行，显示相应的介绍<br>例如：<br><code>line.capitalize?</code><br>得到：</p>
+<h3 id="3-gt-函数"><a href="#3-gt-函数" class="headerlink" title="3&gt;函数"></a>3&gt;函数</h3><p>输入line.再按Tab键，显示所有能对字符串line执行的操作<br>选定一个操作在后面加问号运行，显示相应的介绍<br>例如：<br><code>line.capitalize?</code><br>得到：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Signature: line.capitalize()</span><br><span class="line">Docstring:</span><br><span class="line">Return a capitalized version of the string.</span><br><span class="line"></span><br><span class="line">More specifically, make the first character have upper case and the rest lower</span><br><span class="line">case.</span><br><span class="line">Type:      builtin_function_or_method</span><br></pre></td></tr></table></figure>
 
-
-
-
-
+<h3 id="注：字符串是不可变类型"><a href="#注：字符串是不可变类型" class="headerlink" title="注：字符串是不可变类型"></a><strong>注：</strong>字符串是不可变类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">line &#x3D; ‘haohaoxuexi’</span><br><span class="line">print(id(line))</span><br><span class="line">line &#x3D; ‘tiantianxiangshang&#39;</span><br><span class="line">print(id(line))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4527678896</span><br><span class="line">4522308432</span><br></pre></td></tr></table></figure>
+<p>两次得到两个不同的地址，其实，我们给字符串更改赋值后，原来的值还存在原来内存中，新的值被存在了新的内存位置里</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">line &#x3D; ‘haohaoxuexi’</span><br><span class="line">line[2] &#x3D; &#39;b&#39;</span><br></pre></td></tr></table></figure>
+<p>替换字符串中的单个值是不允许的操作，会报错<br>不可变类型意味着，写进内存就不能更改了</p>
 
       
     </div>
@@ -910,7 +1030,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
