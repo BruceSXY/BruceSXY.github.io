@@ -151,6 +151,103 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/Python%E6%95%99%E7%A8%8B(5)---%E5%BE%AA%E7%8E%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Song，Xiangyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bruce S 的停机坪">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/22/Python%E6%95%99%E7%A8%8B(5)---%E5%BE%AA%E7%8E%AF/" class="post-title-link" itemprop="url">Python教程(5)---循环</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-22 18:06:02 / 修改时间：18:07:06" itemprop="dateCreated datePublished" datetime="2020-04-22T18:06:02+02:00">2020-04-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Python教程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-for循环-遍历循环"><a href="#1-for循环-遍历循环" class="headerlink" title="1.for循环   -遍历循环"></a>1.for循环   -遍历循环</h1><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p>以打印消费记录为例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">costs &#x3D; [34, 3, 61, 45,25, 9]</span><br><span class="line">for cost in costs:</span><br><span class="line">    print(&#39;消费 &#123;&#125;元&#39;.format(str(cost).center(8)))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">消费    34   元</span><br><span class="line">消费    3    元</span><br><span class="line">消费    61   元</span><br><span class="line">消费    45   元</span><br><span class="line">消费    25   元</span><br><span class="line">消费    9    元</span><br></pre></td></tr></table></figure>
+<p><strong>注：</strong>str( )先把数值型转化为字符串型，再用字符串的center( )函数，将价格居中打印</p>
+<h2 id="for循环构建推导式"><a href="#for循环构建推导式" class="headerlink" title="for循环构建推导式"></a>for循环构建推导式</h2><p>构建推导式，就是从一个数据序列构建一个新的数据序列的方法</p>
+<h3 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers &#x3D; [1, 2, 3, 4]</span><br><span class="line">new_numbers &#x3D; [number*10 for number in numbers]</span><br><span class="line">print(new_numbers)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[10, 20, 30, 40]</span><br></pre></td></tr></table></figure>
+<h3 id="字典推导式"><a href="#字典推导式" class="headerlink" title="字典推导式"></a>字典推导式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers &#x3D; [1, 2, 3, 4]</span><br><span class="line">dict &#x3D; &#123;number:&#39;A&#39; for number in numbers&#125;</span><br><span class="line">print(dict)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;1: &#39;A&#39;, 2: &#39;A&#39;, 3: &#39;A&#39;, 4: &#39;A&#39;&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-while循环-条件循环"><a href="#2-while循环-条件循环" class="headerlink" title="2.while循环  -条件循环"></a>2.while循环  -条件循环</h1><h2 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h2><p>生成一个长度为20 的随机列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import random</span><br><span class="line"></span><br><span class="line">random_numbers &#x3D; [ ]</span><br><span class="line">while len(random_numbers) &lt;&#x3D; 20:</span><br><span class="line">	random_numbers.append(random.randint(1, 10))</span><br><span class="line">	</span><br><span class="line">print(random_numbers, len(random_numbers))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[3, 10, 3, 4, 3, 8, 3, 8, 1, 10, 10, 3, 9, 7, 6, 1, 3, 8, 4, 6, 1] 21</span><br></pre></td></tr></table></figure>
+<p><strong>注：</strong>random函数生成随机数，需要import引用，randint( )控制随机数的生成范围</p>
+<h1 id="3-循环的选用"><a href="#3-循环的选用" class="headerlink" title="3.循环的选用"></a>3.循环的选用</h1><p> <strong>建议：</strong></p>
+<ul>
+<li><p>只要能用for循环，就不要使用while循环</p>
+</li>
+<li><p>但当循环的条件跟数量没有关系时，只能用while<br>例如往空列表中添加随机数，直到添加的数为8结束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import random</span><br><span class="line"></span><br><span class="line">random_numbers &#x3D; []</span><br><span class="line">while 9 not in random_numbers:</span><br><span class="line">    random_numbers.append(random.randint(1, 10))</span><br><span class="line"></span><br><span class="line">print(random_numbers, len(random_numbers))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 7, 2, 2, 4, 2, 10, 8, 1, 2, 4, 5, 6, 6, 3, 2, 9] 17</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="4-continue跳过本次"><a href="#4-continue跳过本次" class="headerlink" title="4.continue跳过本次"></a>4.continue跳过本次</h1><p>作用为跳过<strong>本次</strong>循环，进入下一次循环<br>例子，从一组数中挑出偶数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">numbers &#x3D; [4, 53, 20, 97, 51]</span><br><span class="line">for number in numbers:</span><br><span class="line">    if number % 2 &#x3D;&#x3D; 0:</span><br><span class="line">        print(&#39;&#123;&#125; 是偶数&#39;.format(number))</span><br><span class="line">    else:</span><br><span class="line">        continue</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">4 是偶数</span><br><span class="line">20 是偶数</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line"></span><br><span class="line"># 5.break终止循环</span><br><span class="line">break终止所有循环，还是上面的例子</span><br></pre></td></tr></table></figure>
+<p>numbers = [4, 53, 20, 97, 51]<br>for number in numbers:<br>    if number % 2 == 0:<br>        print(‘{} 是偶数’.format(number))<br>    else:<br>        break</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96;</span><br><span class="line">4 是偶数</span><br></pre></td></tr></table></figure>
+<p>遇到一次不是偶数的就停止所有循环了</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/Python%E6%95%99%E7%A8%8B(4)---%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -252,10 +349,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-21 09:54:18 / 修改时间：09:55:47" itemprop="dateCreated datePublished" datetime="2020-04-21T09:54:18+02:00">2020-04-21</time>
+              <time title="创建时间：2020-04-21 09:54:18" itemprop="dateCreated datePublished" datetime="2020-04-21T09:54:18+02:00">2020-04-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-22 17:11:12" itemprop="dateModified" datetime="2020-04-22T17:11:12+02:00">2020-04-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -300,6 +403,12 @@
 <h2 id="5）元组类型-tuple"><a href="#5）元组类型-tuple" class="headerlink" title="5）元组类型(tuple)"></a>5）元组类型(tuple)</h2><p>相当于一种不可变的列表,比较少用</p>
 <h4 id="空元组"><a href="#空元组" class="headerlink" title="空元组"></a>空元组</h4><p><code>var = tuple( )</code><br><code>var = ( )</code></p>
 <h4 id="非空元组"><a href="#非空元组" class="headerlink" title="非空元组"></a>非空元组</h4><p><code>var = (1, 2, 3, [4, 5], &#39;haha&#39;)</code></p>
+<h4 id="只含一个元素的元组"><a href="#只含一个元素的元组" class="headerlink" title="只含一个元素的元组"></a>只含一个元素的元组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; (1)</span><br><span class="line">print(type(a), a)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#39;int&#39;&gt; 1</span><br></pre></td></tr></table></figure>
+<p>如果按上面形式书写，该元组变成了所含的元素，而不再是元组形式<br>所以正确的表达形式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; (1,)</span><br><span class="line">print(type(a), a)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#39;tuple&#39;&gt; (1,)</span><br></pre></td></tr></table></figure>
+<p>在这个唯一元素后面加一个逗号</p>
 <h2 id="6）字典类型"><a href="#6）字典类型" class="headerlink" title="6）字典类型"></a>6）字典类型</h2><p>和现实字典一样，一个关键字在字典中能映射到对应的值</p>
 <h3 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h3><h4 id="定义空字典"><a href="#定义空字典" class="headerlink" title="定义空字典"></a>定义空字典</h4><p><code>var = { }</code><br><code>var = dict( )</code></p>
 <h4 id="非空字典"><a href="#非空字典" class="headerlink" title="非空字典"></a>非空字典</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var &#x3D; &#123;</span><br><span class="line">	     &#39;你&#39; : 10,</span><br><span class="line">	     &#39;好&#39; : 30</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -984,67 +1093,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/%E5%BC%80%E7%AF%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Song，Xiangyu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bruce S 的停机坪">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/13/%E5%BC%80%E7%AF%87/" class="post-title-link" itemprop="url">开篇</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-04-13 16:47:45 / 修改时间：16:49:21" itemprop="dateCreated datePublished" datetime="2020-04-13T16:47:45+02:00">2020-04-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>我想用这个博客<br>分享我的知识和故事</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1108,7 +1161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

@@ -28,7 +28,7 @@
 <meta property="og:description" content="4）列表类型格式空列表varibals &#x3D; [ ]varibals &#x3D; list( ) 非空列表列表可以容纳任意类型，任意数量的对象varibals &#x3D; [1, 2, 3, ‚python’， ‚c++’，[ ], [100, 23] ] append函数添加对象1234varibals &#x3D; [ ]varibals.append(1)  varibals.append(&#39;pyth">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-21T07:54:18.616Z">
-<meta property="article:modified_time" content="2020-04-21T07:55:47.705Z">
+<meta property="article:modified_time" content="2020-04-22T15:11:12.811Z">
 <meta property="article:author" content="Song，Xiangyu">
 <meta name="twitter:card" content="summary">
 
@@ -178,10 +178,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-21 09:54:18 / 修改时间：09:55:47" itemprop="dateCreated datePublished" datetime="2020-04-21T09:54:18+02:00">2020-04-21</time>
+              <time title="创建时间：2020-04-21 09:54:18" itemprop="dateCreated datePublished" datetime="2020-04-21T09:54:18+02:00">2020-04-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-22 17:11:12" itemprop="dateModified" datetime="2020-04-22T17:11:12+02:00">2020-04-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -226,6 +232,12 @@
 <h2 id="5）元组类型-tuple"><a href="#5）元组类型-tuple" class="headerlink" title="5）元组类型(tuple)"></a>5）元组类型(tuple)</h2><p>相当于一种不可变的列表,比较少用</p>
 <h4 id="空元组"><a href="#空元组" class="headerlink" title="空元组"></a>空元组</h4><p><code>var = tuple( )</code><br><code>var = ( )</code></p>
 <h4 id="非空元组"><a href="#非空元组" class="headerlink" title="非空元组"></a>非空元组</h4><p><code>var = (1, 2, 3, [4, 5], &#39;haha&#39;)</code></p>
+<h4 id="只含一个元素的元组"><a href="#只含一个元素的元组" class="headerlink" title="只含一个元素的元组"></a>只含一个元素的元组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; (1)</span><br><span class="line">print(type(a), a)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#39;int&#39;&gt; 1</span><br></pre></td></tr></table></figure>
+<p>如果按上面形式书写，该元组变成了所含的元素，而不再是元组形式<br>所以正确的表达形式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; (1,)</span><br><span class="line">print(type(a), a)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#39;tuple&#39;&gt; (1,)</span><br></pre></td></tr></table></figure>
+<p>在这个唯一元素后面加一个逗号</p>
 <h2 id="6）字典类型"><a href="#6）字典类型" class="headerlink" title="6）字典类型"></a>6）字典类型</h2><p>和现实字典一样，一个关键字在字典中能映射到对应的值</p>
 <h3 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h3><h4 id="定义空字典"><a href="#定义空字典" class="headerlink" title="定义空字典"></a>定义空字典</h4><p><code>var = { }</code><br><code>var = dict( )</code></p>
 <h4 id="非空字典"><a href="#非空字典" class="headerlink" title="非空字典"></a>非空字典</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var &#x3D; &#123;</span><br><span class="line">	     &#39;你&#39; : 10,</span><br><span class="line">	     &#39;好&#39; : 30</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -330,7 +342,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#4）列表类型"><span class="nav-number">1.</span> <span class="nav-text">4）列表类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式"><span class="nav-number">1.1.</span> <span class="nav-text">格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#空列表"><span class="nav-number">1.1.1.</span> <span class="nav-text">空列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非空列表"><span class="nav-number">1.1.2.</span> <span class="nav-text">非空列表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#append函数添加对象"><span class="nav-number">1.2.</span> <span class="nav-text">append函数添加对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他函数"><span class="nav-number">1.3.</span> <span class="nav-text">其他函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序列"><span class="nav-number">1.4.</span> <span class="nav-text">序列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5）元组类型-tuple"><span class="nav-number">2.</span> <span class="nav-text">5）元组类型(tuple)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#空元组"><span class="nav-number">2.0.1.</span> <span class="nav-text">空元组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非空元组"><span class="nav-number">2.0.2.</span> <span class="nav-text">非空元组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6）字典类型"><span class="nav-number">3.</span> <span class="nav-text">6）字典类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式-1"><span class="nav-number">3.1.</span> <span class="nav-text">格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义空字典"><span class="nav-number">3.1.1.</span> <span class="nav-text">定义空字典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非空字典"><span class="nav-number">3.1.2.</span> <span class="nav-text">非空字典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fromkeys函数"><span class="nav-number">3.1.3.</span> <span class="nav-text">fromkeys函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问字典中的关键字或值"><span class="nav-number">3.1.4.</span> <span class="nav-text">访问字典中的关键字或值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他函数-1"><span class="nav-number">3.1.5.</span> <span class="nav-text">其他函数</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#4）列表类型"><span class="nav-number">1.</span> <span class="nav-text">4）列表类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式"><span class="nav-number">1.1.</span> <span class="nav-text">格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#空列表"><span class="nav-number">1.1.1.</span> <span class="nav-text">空列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非空列表"><span class="nav-number">1.1.2.</span> <span class="nav-text">非空列表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#append函数添加对象"><span class="nav-number">1.2.</span> <span class="nav-text">append函数添加对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他函数"><span class="nav-number">1.3.</span> <span class="nav-text">其他函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序列"><span class="nav-number">1.4.</span> <span class="nav-text">序列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5）元组类型-tuple"><span class="nav-number">2.</span> <span class="nav-text">5）元组类型(tuple)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#空元组"><span class="nav-number">2.0.1.</span> <span class="nav-text">空元组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非空元组"><span class="nav-number">2.0.2.</span> <span class="nav-text">非空元组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#只含一个元素的元组"><span class="nav-number">2.0.3.</span> <span class="nav-text">只含一个元素的元组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6）字典类型"><span class="nav-number">3.</span> <span class="nav-text">6）字典类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式-1"><span class="nav-number">3.1.</span> <span class="nav-text">格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义空字典"><span class="nav-number">3.1.1.</span> <span class="nav-text">定义空字典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非空字典"><span class="nav-number">3.1.2.</span> <span class="nav-text">非空字典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fromkeys函数"><span class="nav-number">3.1.3.</span> <span class="nav-text">fromkeys函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问字典中的关键字或值"><span class="nav-number">3.1.4.</span> <span class="nav-text">访问字典中的关键字或值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他函数-1"><span class="nav-number">3.1.5.</span> <span class="nav-text">其他函数</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -343,7 +355,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
